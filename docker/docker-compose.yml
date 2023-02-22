@@ -2,12 +2,12 @@ version: '3.2'
 services:
   rasa_core:
     container_name: rasa_core
-    image: rasa/rasa:3.3.0-full
+    image: rasa/rasa:3.4.4-full
     environment:
       - endpoints=endpoints.yml
       - RASA_MAX_CACHE_SIZE=0
     volumes:
-      - ./app:/app
+      - ../app:/app
     command:
       - run
 
@@ -17,11 +17,10 @@ services:
       dockerfile: Dockerfile
     container_name: rasa_action_server
     image: rasa_action_server
-    environment:
     depends_on:
       - rasa_core
     volumes:
-      - ./app/actions:/app/actions
+      - ../app/actions:/app/actions
 
   # rasa_tracker_store:
   #   container_name: rasa_tracker_store

@@ -38,9 +38,9 @@ As of February 2023, the Rasa Docker image is not compatible with `M1/M2` powere
     ```
 2. `cd docker`
 3. Build the images: `docker compose build`
-4. Run the services: `docker compose up -d`
+4. Run the services: `docker compose up -d` (the first time `rasa_core` will crash since it doesn't find any trained model)
 5. Train the model: `docker compose run --rm rasa_core train --domain domain`
-6. Run Rasa shell `docker compose run --rm rasa_core shell --domain domain` and interact with the chatbot
+6. Run Rasa shell `docker compose run --rm rasa_core shell` and interact with the chatbot
 
 The `docker/docker-compose.yml` comes with the possibility of setting up a custom tracker store using `postgreSQL`, but it is commented by default. If you want to unlock it, you must also uncomment the `tracker_store` related lines in `app/endpoints.yml`:
 ````
