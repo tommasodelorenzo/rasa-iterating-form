@@ -1,6 +1,6 @@
 # Iterating forms in Rasa Open Source
 
-Forms in Rasa Open Source are a great tool for a chatbot to gather a set of required information. While developing a chatbot myself, I needed to gather the same set of information `N` times, where `N` is chosen by the user. The best way of doing that would be to activate a form `N` consecutive times. I faced some problems trying to do that, so I hope this repo will save you some time.
+Forms in [Rasa Open Source](https://rasa.com/docs/rasa/) are a great tool for a chatbot to gather a set of required information. While developing a chatbot myself, I needed to gather the same set of information `N` times, where `N` is chosen by the user. The best way of doing that would be to activate a form `N` consecutive times. I faced some problems trying to do that, so I hope this repo will save you some time.
 
 The repo provides a complete, though minimal example on how to use `Rules` and `Custom Actions` to be able to iterate over a form N times.
 
@@ -21,9 +21,10 @@ Consider for instance you have a chatbot to book spots for a conference. The use
     # action_endpoint:
     # url: "http://rasa_action_server:5055/webhook"
     ```
-3. Train the model: `rasa train --domain domain`
-4. Run the [action server](https://rasa.com/docs/action-server/running-action-server/): `rasa run actions`
-5. Run Rasa shell: `rasa shell` and interact with the chatbot
+3. `cd app`
+4. Train the model: `rasa train --domain domain`
+5. Run the [action server](https://rasa.com/docs/action-server/running-action-server/): `rasa run actions`
+6. In a new shell in the `app` folder, activate the environment and run Rasa shell: `rasa shell` and interact with the chatbot
 
 ### Using docker compose
 As of February 2023, the Rasa Docker image is not compatible with `M1/M2` powered Mac.
