@@ -1,0 +1,71 @@
+version: '3.1'
+
+entities:
+- N
+
+slots:
+  iterations:
+    type: any
+    initial_value: []
+    mappings:
+    - type: custom
+  
+  N:
+    type: float
+    min_value: 1
+    max_value: 5
+    mappings:
+    - type: from_entity
+      entity: N
+      intent: choose_N
+
+  current_iteration:
+    type: float
+    initial_value: 1
+    min_value: 0
+    max_value: 10
+    mappings:
+    - type: custom
+
+  lorem-ipsum:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: my_form
+        requested_slot: lorem-ipsum
+
+  # juridicalState:
+  #   type: categorical
+  #   values:
+  #     - KNOWN
+  #     - UNKNOWN
+  #   mappings:
+  #   - type: from_entity
+  #     entity: juridicalState
+  #     conditions:
+  #     - active_loop: author_form
+  #       requested_slot: juridicalState
+
+  # authors:
+  #   type: any
+  #   initial_value: []
+  #   mappings:
+  #   - type: custom
+  
+  # number_of_authors:
+  #   type: float
+  #   min_value: 1
+  #   max_value: 5
+  #   mappings:
+  #   - type: from_entity
+  #     entity: number_of_authors
+  #     intent: give_number_of_authors
+
+  # current_author:
+  #   type: float
+  #   initial_value: 1
+  #   min_value: 0
+  #   max_value: 10
+  #   mappings:
+  #   - type: custom

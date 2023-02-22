@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+  - rule: Start form after choosing N
+    steps:
+    - intent: choose_N
+    - action: action_start_form
+
+  - rule: Submit form
+    condition:
+    - active_loop: my_form
+    steps:
+    - action: my_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_end_form
+    - action: utter_end
+
+  # - rule: ask for N when user greet
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_ask_N

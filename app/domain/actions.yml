@@ -1,0 +1,6 @@
+version: '3.1'
+
+actions:
+- action_session_start
+- action_start_form
+- action_end_form

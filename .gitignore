@@ -1,0 +1,8 @@
+/app/.config
+/app/.keras
+/app/.rasa
+/app/models
+/app/story_graph.dot
+**/__pycache__/
+**/.DS_Store
+venv

@@ -1,0 +1,23 @@
+version: '3.1'
+
+responses:
+  utter_ask_N:
+  - text: Choose N
+    button_type: vertical
+    buttons:
+    - title: "1"
+      payload: /choose_N{{"N":1}}
+    - title: "2"
+      payload: /choose_N{{"N":2}}
+    - title: "3"
+      payload: /choose_N{{"N":3}}
+    - title: "4"
+      payload: /choose_N{{"N":4}}
+    - title: "5"
+      payload: /choose_N{{"N":5}}
+
+  utter_ask_lorem-ipsum:
+  - text: Write your message.
+
+  utter_end:
+  - text: Test completed.
