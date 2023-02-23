@@ -8,6 +8,9 @@ The example resulting chatbot asks for the number `N` of iterations, and subsequ
 
 Consider for instance you have a chatbot to book spots for a conference. The user can book up to 5 spots and the chatbot need to gather name and age of all the participants. In this case, `my_form` would have `name` and `age` required slots.
 
+#### Important
+Refer to [my post on Rasa forum](https://forum.rasa.com/t/after-restarting-form-submit-is-not-triggered/55470) for an issue using an earlier version of Rasa.
+
 
 ## How to use it
 ### Using virtual environment
@@ -38,8 +41,8 @@ As of February 2023, the Rasa Docker image is not compatible with `M1/M2` powere
     ```
 2. `cd docker`
 3. Build the images: `docker compose build`
-4. Run the services: `docker compose up -d` (the first time `rasa_core` will crash since it doesn't find any trained model)
-5. Train the model: `docker compose run --rm rasa_core train --domain domain`
+4. Train the model: `docker compose run --rm rasa_core train --domain domain`
+5. Run the services: `docker compose up -d` (for simple shell testing as per the following point, it sufficies to run the `action_server` only)
 6. Run Rasa shell `docker compose run --rm rasa_core shell` and interact with the chatbot
 
 The `docker/docker-compose.yml` comes with the possibility of setting up a custom tracker store using `postgreSQL`, but it is commented by default. If you want to unlock it, you must also uncomment the `tracker_store` related lines in `app/endpoints.yml`:
