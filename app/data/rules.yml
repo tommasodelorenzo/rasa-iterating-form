@@ -16,8 +16,3 @@ rules:
       - requested_slot: null
     - action: action_end_form
     - action: utter_end
-
-  # - rule: ask for N when user greet
-  #   steps:
-  #   - intent: greet
-  #   - action: utter_ask_N

@@ -3,6 +3,7 @@ version: '3.1'
 responses:
   utter_ask_N:
   - text: Choose N
+    # buttons used for simplicity. It could be generalised by extracting the number from the user's message
     button_type: vertical
     buttons:
     - title: "1"
